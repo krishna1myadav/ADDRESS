@@ -1,4 +1,4 @@
 package com.address.exception;
 
-public class MissingParameterException {
+public class MissingParameterException extends RuntimeException{
 }
