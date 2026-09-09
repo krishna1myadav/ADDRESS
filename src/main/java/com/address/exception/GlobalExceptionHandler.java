@@ -14,15 +14,15 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, ex.getStatus());
     }
 
-    @ExceptionHandler(org.employee.exception.BadRequestException.class)
-    public ResponseEntity<org.employee.exception.ErrorResponse> handleBadRequestException (BadRequestException ex){
-        org.employee.exception.ErrorResponse response = new org.employee.exception.ErrorResponse(ex.getMessage(), ex.getStatus());
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ErrorResponse> handleBadRequestException (BadRequestException ex){
+        ErrorResponse response = new ErrorResponse(ex.getMessage(), ex.getStatus());
         return new ResponseEntity<>(response, ex.getStatus());
     }
 
     @ExceptionHandler(MissingParameterException.class)
-    public ResponseEntity<org.employee.exception.ErrorResponse> handleMissingParameterException (MissingParameterException ex){
-        org.employee.exception.ErrorResponse response = new org.employee.exception.ErrorResponse(ex.getMessage(), ex.getStatus());
+    public ResponseEntity<ErrorResponse> handleMissingParameterException (MissingParameterException ex){
+        ErrorResponse response = new ErrorResponse(ex.getMessage(), ex.getStatus());
         return new ResponseEntity<>(response, ex.getStatus());
     }
 }
