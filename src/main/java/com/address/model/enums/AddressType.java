@@ -1,4 +1,6 @@
 package com.address.model.enums;
 
-public class AddressType {
+public enum AddressType {
+    PERMANENT,
+    TEMPORARY
 }
