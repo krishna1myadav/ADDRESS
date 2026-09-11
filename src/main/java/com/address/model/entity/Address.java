@@ -1,7 +1,10 @@
 package com.address.model.entity;
 
 
+import com.address.model.enums.AddressType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 @Entity
 public class Address {
@@ -13,6 +16,8 @@ public class Address {
     private String city;
     private String country;
 
+    @Enumerated(EnumType.STRING)
+    private AddressType addressType;
 
 
 }
