@@ -88,4 +88,7 @@ public class Address {
                 ", addressType=" + addressType +
                 '}';
     }
+
+    public Address() {
+    }
 }
