@@ -81,4 +81,7 @@ public class AddressDto {
                 ", addressType=" + addressType +
                 '}';
     }
+
+    public AddressDto() {
+    }
 }
