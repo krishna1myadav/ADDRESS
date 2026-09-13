@@ -69,5 +69,16 @@ public class AddressDto {
         this.addressType = addressType;
     }
 
-
+    @Override
+    public String toString() {
+        return "AddressDto{" +
+                "id=" + id +
+                ", empId=" + empId +
+                ", street='" + street + '\'' +
+                ", pinCode=" + pinCode +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", addressType=" + addressType +
+                '}';
+    }
 }
