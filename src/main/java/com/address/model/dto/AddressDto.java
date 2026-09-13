@@ -1,5 +1,7 @@
 package com.address.model.dto;
 
+import com.address.model.enums.AddressType;
+
 public class AddressDto {
 
     private Long id;
@@ -8,4 +10,7 @@ public class AddressDto {
     private Long pinCode;
     private String city;
     private String country;
+
+    private AddressType addressType;
+
 }
