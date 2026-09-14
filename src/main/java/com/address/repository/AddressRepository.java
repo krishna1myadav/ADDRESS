@@ -1,4 +1,7 @@
 package com.address.repository;
 
-public interface AddressRepository extends JpaRepository<>{
+import com.address.model.entity.Address;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AddressRepository extends JpaRepository<Address, Long> {
 }

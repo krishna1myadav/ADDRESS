@@ -1,9 +1,13 @@
 package com.address.model.dto;
 
 import com.address.model.enums.AddressType;
+import jakarta.persistence.*;
 
+@Entity
 public class AddressDto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long empId;
     private String street;
@@ -11,6 +15,7 @@ public class AddressDto {
     private String city;
     private String country;
 
+    @Enumerated(EnumType.STRING)
     private AddressType addressType;
 
     public Long getId() {
