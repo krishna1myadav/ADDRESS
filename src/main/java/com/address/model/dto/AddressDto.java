@@ -85,5 +85,13 @@ public class AddressDto {
     public AddressDto() {
     }
 
-
+    public AddressDto(Long id, Long empId, String street, Long pinCode, String city, String country, AddressType addressType) {
+        this.id = id;
+        this.empId = empId;
+        this.street = street;
+        this.pinCode = pinCode;
+        this.city = city;
+        this.country = country;
+        this.addressType = addressType;
+    }
 }
