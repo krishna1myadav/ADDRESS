@@ -58,4 +58,6 @@ public class AddressRequestDto {
     public void setAddressType(AddressType addressType) {
         this.addressType = addressType;
     }
+
+
 }
