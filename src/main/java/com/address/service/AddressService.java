@@ -1,4 +1,4 @@
-package com.address.service.impl;
+package com.address.service;
 
 import com.address.model.dto.AddressDto;
 import com.address.model.dto.AddressRequest;
