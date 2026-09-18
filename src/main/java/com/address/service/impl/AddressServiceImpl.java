@@ -31,9 +31,9 @@ public class AddressServiceImpl implements AddressService {
             address.setStreet(addressRequestDto.getStreet());
             address.setCity(addressRequestDto.getCity());
             address.setCountry(addressRequestDto.getCountry());
-            address.setStreet(addressRequestDto.getStreet());
-            address.setStreet(addressRequestDto.getStreet());
-            address.setStreet(addressRequestDto.getStreet());
+            address.setPinCode(addressRequestDto.getPinCode());
+            address.setAddressType(addressRequestDto.getAddressType());
+            address.setEmpId(addressRequest.getEmpId());
         }
 
         return null;
