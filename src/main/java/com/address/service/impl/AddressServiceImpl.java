@@ -2,6 +2,7 @@ package com.address.service.impl;
 
 import com.address.model.dto.AddressDto;
 import com.address.model.dto.AddressRequest;
+import com.address.model.dto.AddressRequestDto;
 import com.address.repository.AddressRepository;
 import com.address.service.AddressService;
 import org.modelmapper.ModelMapper;
@@ -27,6 +28,12 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public AddressDto updateAddress(AddressRequest addressRequest) {
+        // TODO: check if employee exist
+
+        for(AddressRequestDto addressRequestDto: addressRequest.getAddressRequestDtoList()){
+
+        }
+
         return null;
     }
 
