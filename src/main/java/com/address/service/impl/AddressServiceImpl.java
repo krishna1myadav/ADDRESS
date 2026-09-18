@@ -28,6 +28,12 @@ public class AddressServiceImpl implements AddressService {
 
         for(AddressRequestDto addressRequestDto: addressRequest.getAddressRequestDtoList()){
             Address address = new Address();
+            address.setStreet(addressRequestDto.getStreet());
+            address.setCity(addressRequestDto.getCity());
+            address.setCountry(addressRequestDto.getCountry());
+            address.setStreet(addressRequestDto.getStreet());
+            address.setStreet(addressRequestDto.getStreet());
+            address.setStreet(addressRequestDto.getStreet());
         }
 
         return null;
