@@ -9,6 +9,7 @@ import com.address.service.AddressService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,6 +27,7 @@ public class AddressServiceImpl implements AddressService {
     public AddressDto saveAddress(AddressRequest addressRequest) {
         // TODO: check if employee exist
 
+        List<Address> listToSave = new ArrayList<>();
         for(AddressRequestDto addressRequestDto: addressRequest.getAddressRequestDtoList()){
             Address address = new Address();
             address.setStreet(addressRequestDto.getStreet());
@@ -34,6 +36,7 @@ public class AddressServiceImpl implements AddressService {
             address.setPinCode(addressRequestDto.getPinCode());
             address.setAddressType(addressRequestDto.getAddressType());
             address.setEmpId(addressRequest.getEmpId());
+            listToSave.add(address);
         }
 
         return null;
