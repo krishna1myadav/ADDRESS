@@ -24,7 +24,7 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public AddressDto saveAddress(AddressRequest addressRequest) {
+    public List<AddressDto> saveAddress(AddressRequest addressRequest) {
         // TODO: check if employee exist
 
         List<Address> listToSave = new ArrayList<>();
@@ -38,6 +38,7 @@ public class AddressServiceImpl implements AddressService {
             address.setEmpId(addressRequest.getEmpId());
             listToSave.add(address);
         }
+        List<Address> savedAddress = addressRepository.saveAll(listToSave);
 
         return null;
     }
