@@ -40,7 +40,7 @@ public class AddressServiceImpl implements AddressService {
         }
         List<Address> savedAddress = addressRepository.saveAll(listToSave);
 
-        return null;
+        return savedAddress.stream().map(address -> modelMapper.map(address, AddressDto.class)).toList();
     }
 
     @Override
