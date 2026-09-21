@@ -1,6 +1,5 @@
 package com.address.model.entity;
 
-
 import com.address.model.enums.AddressType;
 import jakarta.persistence.*;
 

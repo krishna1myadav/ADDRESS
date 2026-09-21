@@ -44,11 +44,8 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public AddressDto updateAddress(AddressRequest addressRequest) {
+    public List<AddressDto> updateAddress(AddressRequest addressRequest) {
 
-
-
-        return null;
     }
 
     @Override
