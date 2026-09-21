@@ -7,6 +7,8 @@ import com.address.model.entity.Address;
 import com.address.repository.AddressRepository;
 import com.address.service.AddressService;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,6 +16,8 @@ import java.util.List;
 
 @Service
 public class AddressServiceImpl implements AddressService {
+
+    Logger log = LoggerFactory.getLogger(AddressServiceImpl.class);
 
     private final AddressRepository addressRepository;
     private final ModelMapper modelMapper;
@@ -49,7 +53,8 @@ public class AddressServiceImpl implements AddressService {
         List<Address> addressByEmpId = addressRepository.findAllByEmpId(addressRequest.getEmpId());
 
         if(addressByEmpId.isEmpty()){
-
+            log.info("No address found for employee id {}", addressRequest.getEmpId());
+            return List.of();
         }
     }
 
