@@ -72,4 +72,8 @@ public class AddressServiceImpl implements AddressService {
     public void deleteAddress(Long id) {
 
     }
+
+    private List<Address> saveOrUpdateAddressRequest(AddressRequest addressRequest){
+
+    }
 }
