@@ -54,7 +54,7 @@ public class AddressServiceImpl implements AddressService {
 
         if(addressByEmpId.isEmpty()){
             log.info("No address found for employee id {}", addressRequest.getEmpId());
-            return List.of();
+            log.info("creating new address for employee id {}", addressRequest.getEmpId());
         }
     }
 
