@@ -83,6 +83,7 @@ public class AddressServiceImpl implements AddressService {
             address.setPinCode(addressRequestDto.getPinCode());
             address.setAddressType(addressRequestDto.getAddressType());
             address.setEmpId(addressRequest.getEmpId());
+            listToSave.add(address);
         }
     }
 }
