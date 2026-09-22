@@ -74,6 +74,9 @@ public class AddressServiceImpl implements AddressService {
     }
 
     private List<Address> saveOrUpdateAddressRequest(AddressRequest addressRequest){
+        List<Address> listToSave = new ArrayList<>();
+        for(AddressRequestDto addressRequestDto: addressRequest.getAddressRequestDtoList()){
 
+        }
     }
 }
