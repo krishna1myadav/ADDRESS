@@ -31,17 +31,8 @@ public class AddressServiceImpl implements AddressService {
     public List<AddressDto> saveAddress(AddressRequest addressRequest) {
         // TODO: check if employee exist
 
-        List<Address> listToSave = new ArrayList<>();
-        for(AddressRequestDto addressRequestDto: addressRequest.getAddressRequestDtoList()){
-            Address address = new Address();
-            address.setStreet(addressRequestDto.getStreet());
-            address.setCity(addressRequestDto.getCity());
-            address.setCountry(addressRequestDto.getCountry());
-            address.setPinCode(addressRequestDto.getPinCode());
-            address.setAddressType(addressRequestDto.getAddressType());
-            address.setEmpId(addressRequest.getEmpId());
-            listToSave.add(address);
-        }
+        List<Address> listToSave = this.saveOrUpdateAddressRequest(addressRequest);
+
         List<Address> savedAddress = addressRepository.saveAll(listToSave);
 
         return savedAddress.stream().map(address -> modelMapper.map(address, AddressDto.class)).toList();
@@ -85,5 +76,6 @@ public class AddressServiceImpl implements AddressService {
             address.setEmpId(addressRequest.getEmpId());
             listToSave.add(address);
         }
+        return listToSave;
     }
 }
