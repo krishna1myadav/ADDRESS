@@ -50,6 +50,7 @@ public class AddressServiceImpl implements AddressService {
         }
         List<Address> listToUpdate = this.saveOrUpdateAddressRequest(addressRequest);
         List<Long> upcomingNonNullIds = listToUpdate.stream().map(Address::getId).filter(Objects::nonNull).toList();
+        List<Long> existingIds = addressByEmpId.stream().map(Address::getId).toList();
     }
 
     @Override
