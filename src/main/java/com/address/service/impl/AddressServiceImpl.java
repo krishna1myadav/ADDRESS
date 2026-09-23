@@ -47,6 +47,7 @@ public class AddressServiceImpl implements AddressService {
             log.info("No address found for employee id {}", addressRequest.getEmpId());
             log.info("creating new address for employee id {}", addressRequest.getEmpId());
         }
+        List<Address> listToUpdate = this.saveOrUpdateAddressRequest(addressRequest);
     }
 
     @Override
@@ -68,6 +69,7 @@ public class AddressServiceImpl implements AddressService {
         List<Address> listToSave = new ArrayList<>();
         for(AddressRequestDto addressRequestDto: addressRequest.getAddressRequestDtoList()){
             Address address = new Address();
+            address.setId(addressRequestDto.getId() != null ? addressRequestDto.getId() : null);
             address.setStreet(addressRequestDto.getStreet());
             address.setCity(addressRequestDto.getCity());
             address.setCountry(addressRequestDto.getCountry());
