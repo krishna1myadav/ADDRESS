@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class AddressServiceImpl implements AddressService {
@@ -48,6 +49,7 @@ public class AddressServiceImpl implements AddressService {
             log.info("creating new address for employee id {}", addressRequest.getEmpId());
         }
         List<Address> listToUpdate = this.saveOrUpdateAddressRequest(addressRequest);
+        List<Long> upcomingNonNullIds = listToUpdate.stream().map(Address::getId).filter(Objects::nonNull).toList();
     }
 
     @Override
