@@ -49,8 +49,15 @@ public class AddressServiceImpl implements AddressService {
             log.info("creating new address for employee id {}", addressRequest.getEmpId());
         }
         List<Address> listToUpdate = this.saveOrUpdateAddressRequest(addressRequest);
+
         List<Long> upcomingNonNullIds = listToUpdate.stream().map(Address::getId).filter(Objects::nonNull).toList();
         List<Long> existingIds = addressByEmpId.stream().map(Address::getId).toList();
+
+        List<Long> idsToDelete = existingIds.stream().filter(id -> !upcomingNonNullIds.contains(id)).toList();
+
+        if(!idsToDelete.isEmpty()){
+
+        }
     }
 
     @Override
