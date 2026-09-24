@@ -5,10 +5,7 @@ import com.address.model.dto.AddressRequest;
 import com.address.service.AddressService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +23,10 @@ public class AddressController {
     public ResponseEntity<List<AddressDto>> saveAddress(@RequestBody AddressRequest addressDto){
         List<AddressDto> response = addressService.saveAddress(addressDto);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/update/{empId}")
+    public ResponseEntity<List<AddressDto>> updateAddress(@RequestBody AddressRequest addressDto, @PathVariable Long empId){
+
     }
 }
