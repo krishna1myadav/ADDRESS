@@ -25,8 +25,9 @@ public class AddressController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update/{empId}")
-    public ResponseEntity<List<AddressDto>> updateAddress(@RequestBody AddressRequest addressDto, @PathVariable Long empId){
-
+    @PutMapping("/update")
+    public ResponseEntity<List<AddressDto>> updateAddress(@RequestBody AddressRequest addressDto){
+        List<AddressDto> reponse = addressService.updateAddress(addressDto);
+        return new ResponseEntity<>(reponse, HttpStatus.OK);
     }
 }
