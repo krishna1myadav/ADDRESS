@@ -56,8 +56,11 @@ public class AddressServiceImpl implements AddressService {
         List<Long> idsToDelete = existingIds.stream().filter(id -> !upcomingNonNullIds.contains(id)).toList();
 
         if(!idsToDelete.isEmpty()){
-
+            addressRepository.deleteAllById(idsToDelete);
         }
+
+        List<Address> updateAddress = addressRepository.saveAll(listToUpdate);
+        return updateAddress.stream().map(address -> modelMapper.map(address, AddressDto.class)).toList();
     }
 
     @Override
