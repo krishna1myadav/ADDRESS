@@ -72,7 +72,11 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public List<AddressDto> getAllAddress() {
-        return List.of();
+        List<Address> all = addressRepository.findAll();
+        if(all.isEmpty()){
+            throw new ResourceNotFoundException("Address not found");
+        }
+        return all.stream().map(address -> modelMapper.map(address, AddressDto.class)).toList();
     }
 
     @Override
