@@ -6,6 +6,7 @@ import com.address.model.dto.AddressRequestDto;
 import com.address.model.entity.Address;
 import com.address.repository.AddressRepository;
 import com.address.service.AddressService;
+import org.employee.exception.ResourceNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,7 +66,8 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public AddressDto getSingleAddress(Long id) {
-        return null;
+        Address address = addressRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Address not found with id " + id));
+        return modelMapper.map(address, AddressDto.class);
     }
 
     @Override
