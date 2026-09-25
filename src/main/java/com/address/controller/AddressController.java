@@ -30,4 +30,10 @@ public class AddressController {
         List<AddressDto> reponse = addressService.updateAddress(addressDto);
         return new ResponseEntity<>(reponse, HttpStatus.OK);
     }
+
+    @GetMapping("/all-address")
+    public ResponseEntity<List<AddressDto>> getAllAddress(){
+        List<AddressDto> response = addressService.getAllAddress();
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }
