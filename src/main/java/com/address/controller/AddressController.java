@@ -42,4 +42,7 @@ public class AddressController {
         AddressDto response = addressService.getSingleAddress(addressId);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @DeleteMapping("/delete/{addressId}")
+
 }
