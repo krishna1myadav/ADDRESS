@@ -36,4 +36,9 @@ public class AddressController {
         List<AddressDto> response = addressService.getAllAddress();
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    public ResponseEntity<AddressDto> getAddressById(@PathVariable Long addressId){
+        AddressDto response = addressService.getSingleAddress(addressId);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }
