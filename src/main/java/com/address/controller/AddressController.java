@@ -37,6 +37,7 @@ public class AddressController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @GetMapping("/{addressId}")
     public ResponseEntity<AddressDto> getAddressById(@PathVariable Long addressId){
         AddressDto response = addressService.getSingleAddress(addressId);
         return new ResponseEntity<>(response, HttpStatus.OK);
