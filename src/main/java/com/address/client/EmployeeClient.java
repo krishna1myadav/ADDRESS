@@ -1,4 +1,7 @@
 package com.address.client;
 
-public class EmployeeClient {
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient("employeeClient", url = "${employee.service.url}")
+public interface EmployeeClient {
 }
