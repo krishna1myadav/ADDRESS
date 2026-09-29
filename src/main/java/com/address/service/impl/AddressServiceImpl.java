@@ -1,5 +1,6 @@
 package com.address.service.impl;
 
+import com.address.client.EmployeeClient;
 import com.address.model.dto.AddressDto;
 import com.address.model.dto.AddressRequest;
 import com.address.model.dto.AddressRequestDto;
@@ -23,10 +24,13 @@ public class AddressServiceImpl implements AddressService {
 
     private final AddressRepository addressRepository;
     private final ModelMapper modelMapper;
+    private final EmployeeClient employeeClient;
 
-    public AddressServiceImpl(AddressRepository addressRepository, ModelMapper modelMapper){
+    public AddressServiceImpl(AddressRepository addressRepository, ModelMapper modelMapper, EmployeeClient employeeClient){
         this.addressRepository = addressRepository;
         this.modelMapper = modelMapper;
+        this.employeeClient = employeeClient;
+
     }
 
     @Override
