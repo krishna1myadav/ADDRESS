@@ -4,6 +4,7 @@ import com.address.client.EmployeeClient;
 import com.address.model.dto.AddressDto;
 import com.address.model.dto.AddressRequest;
 import com.address.model.dto.AddressRequestDto;
+import com.address.model.dto.EmployeeDto;
 import com.address.model.entity.Address;
 import com.address.repository.AddressRepository;
 import com.address.service.AddressService;
@@ -36,6 +37,10 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public List<AddressDto> saveAddress(AddressRequest addressRequest) {
         // TODO: check if employee exist
+        EmployeeDto employee = employeeClient.getSingleEmployee(addressRequest.getEmpId());
+        if(employee == null){
+            throw new ResourceNotFoundException("Employee not found with id : " + addressRequest.getEmpId());
+        }
 
         List<Address> listToSave = this.saveOrUpdateAddressRequest(addressRequest);
 
