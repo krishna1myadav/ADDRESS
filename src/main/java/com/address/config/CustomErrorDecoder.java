@@ -1,5 +1,6 @@
 package com.address.config;
 
+import com.address.exception.CustomException;
 import com.address.exception.ErrorResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Response;
