@@ -9,4 +9,8 @@ public class CustomException {
         super(message);
         this.status = status;
     }
+    public CustomException(String message){
+        super(message);
+        this.status = HttpStatus.INTERNAL_SERVER_ERROR;
+    }
 }
