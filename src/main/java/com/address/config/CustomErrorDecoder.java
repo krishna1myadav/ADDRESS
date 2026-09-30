@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 public class CustomErrorDecoder implements ErrorDecoder {
@@ -16,6 +17,8 @@ public class CustomErrorDecoder implements ErrorDecoder {
         try(InputStream is = response.body().asInputStream()){
             ErrorResponse errorResponse = objectMapper.readValue(is, ErrorResponse.class);
             return new CustomException(errorResponse.getMessage(), errorResponse.getStatus());
+        }catch (IOException e){
+            throw new CustomException("Internal_server_error");
         }
     }
 }
