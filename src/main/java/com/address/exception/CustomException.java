@@ -3,7 +3,7 @@ package com.address.exception;
 import org.springframework.http.HttpStatus;
 
 public class CustomException {
-    private String status;
+    private HttpStatus status;
 
     public CustomException(String message, HttpStatus status){
         super(message);
@@ -16,7 +16,7 @@ public class CustomException {
     public HttpStatus getStatus(){
         return status;
     }
-    public void setStatu(HttpStatus status){
+    public void setStatus(HttpStatus status){
         this.status = status;
     }
 }
