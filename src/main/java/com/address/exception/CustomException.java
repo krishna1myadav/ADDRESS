@@ -13,4 +13,10 @@ public class CustomException {
         super(message);
         this.status = HttpStatus.INTERNAL_SERVER_ERROR;
     }
+    public HttpStatus getStatus(){
+        return status;
+    }
+    public void setStatu(HttpStatus status){
+        this.status = status;
+    }
 }
